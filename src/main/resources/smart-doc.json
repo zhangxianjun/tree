@@ -1,0 +1,49 @@
+{
+  "serverUrl": "https://api.ptest.cc",
+  "pathPrefix": "/archetype",
+  "isStrict": false,
+  "allInOne": true,
+  "outPath": "./src/main/resources/api-doc",
+  "projectName": "archetype",
+  "coverOld": true,
+  "createDebugPage": true,
+  "allInOneDocFileName": "index.html",
+
+  "requestHeaders": [
+    {
+      "name": "token",
+      "type": "string",
+      "desc": "token",
+      "value": "抓包拿到",
+      "required": false
+    },
+    {
+      "name": "lang",
+      "type": "string",
+      "desc": "语言：en-US，zh-CN",
+      "value": "zh-CN",
+      "required": false
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "desc": "币种：USD，CNY",
+      "value": "USD",
+      "required": false
+    }
+  ],
+  "dataDictionaries": [
+    {
+      "title": "HTTP状态码",
+      "enumClassName": "team.flint.example.model.enums.HttpCodeEnum",
+      "codeField": "code",
+      "descField": "message"
+    },
+    {
+      "title": "业务错误码",
+      "enumClassName": "team.flint.example.model.enums.BusinessCodeEnum",
+      "codeField": "code",
+      "descField": "message"
+    }
+  ]
+}

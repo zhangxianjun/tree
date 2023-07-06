@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<configuration>-->
+<!--    &lt;!&ndash; 暂时使用网络加载，目前没有找到加载依赖jar里面logback.xml路径写法&ndash;&gt;-->
+<!--    <include url="https://gitlab.yuntron.org/config/logback/-/raw/main/logback.xml" />-->
+
+<!--&lt;!&ndash;    <include resource="com/flint/parent/logback-main.xml" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <include resource="classpath:com/flint/parent/logback-main.xml" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <include resource="com/flint/parent/1.0.0/parent-1.0.0.jar!/logback-main.xml" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <include resource="classpath:com/flint/parent/1.0.0/parent-1.0.0.jar!/logback-main.xml" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <include resource="classpath:com.flint.parent/logback-main.xml" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <include file="/Users/dushiling/.m2/repository/com/flint/parent/1.0.0/parent-1.0.0.jar!/logback-main.xml" />&ndash;&gt;-->
+<!--</configuration>-->
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--debug：默认为false；若设置为true，打印出logback内部日志信息-->
+<!--scan：默认值为true，若设置为true，配置文件如果发生改变，将会被重新加载-->
+<!--scanPeriod：与scan配合使用，当scan为true时，此属性生效，默认的时间间隔为1分钟-->
+<configuration>
+    <!--默认上下文名称是default，用于标识应用-->
+    <contextName>default</contextName>
+    <!--定义属性-->
+    <!--<property name="path" value="./log" />-->
+    <!--定义属性，读取application.properties-->
+    <!--<springProperty scope="context" name="log.path" source="catalina.base"/>-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="utf-8">
+            <!--定义打印值：时间戳，日志级别，线程名，类名和方法名，接口名，用户唯一标识，请求ID，业务信息  -->
+            <pattern>{"time":"%d{yyyy-MM-dd HH:mm:ss.SSS}", "level":"%-5level" "thread":"[%thread]", "logger": "%logger{50}","X_EVENT_NAME":"%X{X_EVENT_NAME}", "X_USER_ID": "%X{X_USER_ID}", "X_EVENT_ID":"%X{X_EVENT_ID}", "X_MSG":"%msg"}%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
