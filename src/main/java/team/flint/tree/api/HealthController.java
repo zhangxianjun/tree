@@ -1,13 +1,16 @@
-package team.flint.tree.controller;
+package team.flint.tree.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 健康检查
+ */
 @Slf4j
 @RestController
-@RequestMapping("/fw")
+@RequestMapping("/")
 public class HealthController {
     /**
      * 健康检查：HTTP状态为200，程序启动正常。

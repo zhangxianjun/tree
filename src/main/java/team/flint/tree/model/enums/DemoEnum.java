@@ -3,7 +3,7 @@ package team.flint.tree.model.enums;
 /**
  * 枚举
  */
-public enum FlowTypeEnum {
+public enum DemoEnum {
     TRANSFER_IN(257, "划入"),
     TRANSFER_OUT(258, "划出"),
     OFFER(259, "报价"),
@@ -46,13 +46,13 @@ public enum FlowTypeEnum {
         return value;
     }
 
-    FlowTypeEnum(int key, String value) {
+    DemoEnum(int key, String value) {
         this.key = key;
         this.value = value;
     }
 
-    public static FlowTypeEnum getType(int key) {
-        for (FlowTypeEnum item : FlowTypeEnum.values()) {
+    public static DemoEnum getType(int key) {
+        for (DemoEnum item : DemoEnum.values()) {
             if (item.getKey() == key) {
                 return item;
             }

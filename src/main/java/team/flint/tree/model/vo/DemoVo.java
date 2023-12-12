@@ -1,14 +1,11 @@
 package team.flint.tree.model.vo;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * 用户信息
  */
 //@Getter
 //@Setter
-public class UserInfoVo {
+public class DemoVo {
     private String name;
     private int age;
 

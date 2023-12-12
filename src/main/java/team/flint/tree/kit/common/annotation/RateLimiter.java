@@ -1,7 +1,7 @@
 package team.flint.tree.kit.common.annotation;
 
 
-import team.flint.example.kit.common.enums.LimitType;
+import team.flint.tree.kit.common.enums.LimitType;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
